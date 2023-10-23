@@ -1,0 +1,3 @@
+
+@Controller
+@RequestMapping("/admin")
