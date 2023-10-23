@@ -1,0 +1,40 @@
+Itens da Etapa I Pontos
+1) Implementou o REQFUNC 1 10 - 
+2) Implementou o REQFUNC 2 10 - 
+3) Implementou o REQFUNC 3 15 -
+4) Implementou o REQFUNC 7 15 -
+5) Implementou o REQFUNC 8 10
+6) Implementou o REQFUNC 13 05
+7) Implementou o REQFUNC 14 15
+8) Implementou o REQFUNC 15 05
+9) Cumpriu o REQNAOFUNC 2 05
+10) Cumpriu o REQNAOFUNC 5 05
+11) Cumpriu o REQNAOFUNC 6 05
+Total de Pontos 100
+
+REQFUNC 1. O aluno cadastra um novo processo, informando o assunto e um texto com seu requerimento.
+
+REQFUNC 2. O aluno consulta o estado de todos os seus processos, podendo filtrá-los pelo status ou 
+assunto e ordená-los pela data de criação. Ele poderá realizar upload de documentos para fundamentar 
+seu pedido.
+
+REQFUNC 3. O professor consulta todos os processos que lhe foram designados pelo coordenador.
+
+REQFUNC 7. O coordenador consulta todos os processos do colegiado, podendo filtrá-los por seu status, 
+pelo aluno interessado ou pelo professor relator (caso já tenha sido distribuído).
+
+REQFUNC 8. O coordenador pode distribuir um processo para um professor membro do colegiado, o qual 
+será designado relator do processo.
+
+REQFUNC 13. O administrador deve realizar CRUDs para colegiados (conjunto de professores que o 
+compõem).
+
+REQFUNC 14. O administrador deve realizar CRUDs para alunos, professores e coordenadores.
+
+REQFUNC 15. O administrador deve realizar CRUDs para assuntos de processos.
+
+REQNAOFUNC 2. : Utilizar Bootstrap.
+
+REQNAOFUNC 5. : Utilizar validação e campos de mensagens para mostrar erros em todas os formulários.
+
+REQNAOFUNC 6. : Utilizar o padrão Post_Redirect_Get.
