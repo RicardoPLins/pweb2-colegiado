@@ -11,4 +11,3 @@ public interface Service<T, ID> {
     public T save(T t);
     
 }
-

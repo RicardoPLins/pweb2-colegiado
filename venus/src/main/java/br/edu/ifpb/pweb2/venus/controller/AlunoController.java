@@ -13,10 +13,4 @@ public class AlunoController {
     @Autowired
     private AlunoService alunoService;
 
-    @RequestMapping("/form")
-    public ModelAndView getForm(ModelAndView modelAndView){
-        modelAndView.setViewName("alunos/form");
-        
-    }
-
 }
