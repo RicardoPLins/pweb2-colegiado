@@ -1,0 +1,47 @@
+body,html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    font: 15px;
+}
+
+.content{
+    flex-grow: 1;
+}
+
+/* LOGIN */
+
+.logo-login{
+    width: 200px;
+    height: 200px;
+}
+
+/* MENU LATERAL */
+
+#menu-lateral{
+    width: 250px;
+    height: 100%;
+    border-radius: 0;
+
+}
+
+.foto-perfil div{
+    width: 150px;
+    height: 150px;
+}
+
+.lista-navegacao a {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    font-weight: 600;
+    
+}
+
+/* Form do usuario */
+
+.form-usuario{
+
+}
