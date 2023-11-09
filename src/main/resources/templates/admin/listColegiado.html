@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <title>Admin</title>
+</head>
+<body>
+
+  <div class="container">
+    <form th:action="@{/admin/colegiados/cadastro}" method="GET">
+        <button class="btn btn-primary" type="submit">Novo</button>
+    </form>
+
+    <div id="main">
+        <div>
+          <h2>COLEGIADO</h2>
+          <table class="table" id="tabela">
+            <thead>
+              <tr>
+                <th>Curso</th>
+                <th>Portaria</th>
+                <th>Descrição</th>
+                <th>Alterar</th>
+                <th>Excluir</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="colegiado : ${colegiados}">
+                <td th:text="${colegiado.curso}">Sistemas para Internet</td>
+                <td th:text="${colegiado.portaria}">111111111</td>
+                <td th:text="${colegiado.descricao}"></td>
+                
+                <td>
+                    <a th:href="@{/admin/colegiados/{id}(id=${colegiado.id})}" class="btn btn-warning">
+                        <i class="fas fa-pencil-square-o"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="#" class="btn btn-danger delete-button" data-id="[[${colegiado.id}]]">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+            
+              
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
