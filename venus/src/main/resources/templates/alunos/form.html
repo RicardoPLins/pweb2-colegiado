@@ -1,4 +1,4 @@
-<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:insert="~{layout/layout}" th:with="titulo='Cadastro de Correntista'">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:insert="~{layout/layout}" th:with="titulo='Cadastro de Processos de alunos'">
 
 <body>
     <div layout:fragment="content">
@@ -18,7 +18,7 @@
                 <p th:if="${#fields.hasErrors('texto')}" th:errorclass="error" th:errors="*{texto}" class="alert alert-danger" />
             </div>
             <div class="form-group mx-sm-3 mb-2">
-                <label for="lastName">Data</label>
+                <label for="Data">Data</label>
                 <input type="date" th:field="*{data}" class="form-control  mb-2" />
                 <p th:if="${#fields.hasErrors('data')}" th:errorclass="error" th:errors="*{data}" class="alert alert-danger" />
             </div>

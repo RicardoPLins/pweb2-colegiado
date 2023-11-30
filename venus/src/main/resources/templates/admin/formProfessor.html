@@ -1,10 +1,18 @@
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:insert="~{layout/layout}" th:with="titulo='Cadastro de Professor'">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+    <title>Professor</title>
+  </head>
 <body>
     <div layout:fragment="content">
 
 
-        <form class="form-inline" th:action="@{/professores}" method="POST" th:object="${Professor}">
+        <form class="form-inline" th:action="@{/admin/professores}" method="POST" th:object="${professor}">
             <input type="hidden" th:field="*{id}" />
 
             <div class="form-group mx-sm-3 mb-2">
@@ -38,15 +46,16 @@
             </div>
 
             <div class="form-group mx-sm-3 mb-2">
-                <input type="checkbox" th:field="*{admin}" class="form-check-input mt-2" />
+                <input type="checkbox" th:field="*{coordenador}" class="form-check-input mt-2" />
                 <label class="form-check-label mt-1">
                     Coordenador
                 </label>
+                <p th:if="${#fields.hasErrors('coordenador')}" th:errorclass="error" th:errors="*{coordenador}" class="alert alert-danger" />
             </div>
 
             <div class="form-group mx-sm-3 mb-2">
                 <input type="submit" value="Salvar" class="btn btn-primary" />
-                <a class="btn btn-secondary" th:href="@{/correntistas}">Cancelar</a>
+                <a class="btn btn-secondary" th:href="@{/admin/professores}">Cancelar</a>
             </div>
         </form>
     </div>
