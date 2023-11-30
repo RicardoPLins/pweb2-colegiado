@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head th:replace="~{fragments/base :: head}"></head>
+<body>
+    <div class="w-100 h-100 d-flex justify-content-center">
+        
+    <div class="w-25 d-flex justify-content-center flex-column">
+        <div class="logo-login bg-secondary mx-auto mb-5 rounded-circle">
+
+        </div>
+        
+        <div class="border rounded-3 p-3">
+            <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-2">
+                  <label for="exampleInputPassword1" class="form-label">Senha</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-2 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Manter conectado</label>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary col-7">Entrar</button>
+                </div>
+              </form>
+        </div>
+    </div>
+    
+
+    </div>
+    <script th:replace="~{fragments/base :: scriptjs}"></script>
+</body>
+</html>
