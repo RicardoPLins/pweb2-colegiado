@@ -4,39 +4,45 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import br.edu.ifpb.pweb2.venus.model.Aluno;
-import br.edu.ifpb.pweb2.venus.repository.AlunoRepository;
+import br.edu.ifpb.pweb2.venus.model.Assunto;
+import br.edu.ifpb.pweb2.venus.model.Processo;
+import br.edu.ifpb.pweb2.venus.repository.AssuntoRepository;
+import br.edu.ifpb.pweb2.venus.repository.ProcessoRepository;
 
-@Component
-public class AlunoService implements Service<Aluno, Integer>{
-    
-   @Autowired
-    private AlunoRepository alunoRepository;
+@Service
+public class AlunoService {
 
-    @Override
-    public List<Aluno> findAll(){
-        return alunoRepository.findAll();
+    @Autowired
+    private ProcessoRepository processoRepository;
+
+    @Autowired
+    private AssuntoRepository assuntoRepository;
+
+    @Transactional
+    public void removerProcesso(Integer id) {
+        processoRepository.deleteById(id);
     }
 
-    @Override
-    public Aluno findById(Integer id) {
-        Aluno aluno = null;
-        Optional<Aluno> opAluno = alunoRepository.findById(id);
-        if (opAluno.isPresent()) {
-            aluno = opAluno.get();
-        }
-        return aluno;
-        
+    @Transactional
+    public void saveProcesso(Processo processo) {
+        Assunto assunto = assuntoRepository.findById(processo.getAssunto().getId()).get();
+        processo.setAssunto(assunto);
+        processoRepository.save(processo);
     }
 
-    @Override
-    public Aluno save(Aluno t) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+    public List<Processo> listProcesso() {
+        return processoRepository.findAll();
     }
-    public void deleteById(Integer id) {
-        alunoRepository.deleteById(id);
+
+    public List<Assunto> listAssunto() {
+        return assuntoRepository.findAll();
     }
+
+    public Optional<Processo> getProcesso(Integer id) {
+        return processoRepository.findById(id);
+    }
+
 }

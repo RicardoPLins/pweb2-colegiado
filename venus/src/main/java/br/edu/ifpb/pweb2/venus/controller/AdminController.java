@@ -25,6 +25,11 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
+    @GetMapping("/home")
+    public String showHomePage() {
+        return "admin/home";
+    }
+
 
     @GetMapping("/alunos")
     public ModelAndView getAlunos(ModelAndView mav) {
